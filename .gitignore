@@ -1,0 +1,9 @@
+# Let's keep the files out of this repo 
+
+/.west/*
+/bootloader/*
+/modules/*
+/tools/*
+/zephyr/*
+
+/myApp/build/*

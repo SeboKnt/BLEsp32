@@ -1,12 +1,23 @@
-#include <zephyr/kernel.h>
-#include <zephyr/device.h>
+#include <zephyr/sys/printk.h>
+#include <zephyr/bluetooth/bluetooth.h>
+
+int observer_start(void);
 
 int main(void)
 {
-	while (true) {
-		k_msleep(1000);
-		printk("Hello World again from %s\n", CONFIG_BOARD);
+	int err;
+
+	printk("Starting Observer Demo\n");
+
+	/* Initialize the Bluetooth Subsystem */
+	err = bt_enable(NULL);
+	if (err) {
+		printk("Bluetooth init failed (err %d)\n", err);
+		return 0;
 	}
-	
+
+	(void)observer_start();
+
+	printk("Exiting %s thread.\n", __func__);
 	return 0;
 }

@@ -19,6 +19,7 @@ ODER
 ## le init
 
 `west init` \
+`west blobs fetch hal_espressif` \
 `west update` \
 `west zephyr-export`
 

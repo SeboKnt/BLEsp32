@@ -2,6 +2,7 @@
 
 ## le importante
 
+`source ~/zephyrproject/.venv/bin/activate` \
 `cd myApp` \
 `rm -r build` \\
 `west build` \
